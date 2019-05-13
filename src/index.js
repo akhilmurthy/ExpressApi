@@ -1,7 +1,7 @@
-let express = require("express");
-let path = require("path");
-let customerRoute = require("./routes/customer");
-let bodyParser = require("body-parser");
+import express from "express";
+import path from "path";
+import customerRoute from "./routes/customer";
+import bodyParser from "body-parser";
 
 let app = express();
 

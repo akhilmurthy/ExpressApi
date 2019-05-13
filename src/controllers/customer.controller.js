@@ -1,6 +1,6 @@
-let CustomerModel = require("../models/customer.model");
+import CustomerModel from "../models/customer.model";
 
-exports.post_customer = function(req, res) {
+export function post_customer(req, res) {
   if (!req.body) {
     return res.status(400).send("request body is missing");
   }
@@ -16,9 +16,9 @@ exports.post_customer = function(req, res) {
     .catch(err => {
       res.status(500).json(err);
     });
-};
+}
 
-exports.get_customer = function(req, res) {
+export function get_customer(req, res) {
   if (!req.query.email) {
     return res.status(400).send("Missing URL parameter: email");
   }
@@ -31,9 +31,9 @@ exports.get_customer = function(req, res) {
     .catch(err => {
       res.status(500).json(err);
     });
-};
+}
 
-exports.put_customer = function(req, res) {
+export function put_customer(req, res) {
   if (!req.query.email) {
     return res.status(400).send("Missing URL parameter: email");
   }
@@ -52,9 +52,9 @@ exports.put_customer = function(req, res) {
     .catch(err => {
       res.status(500).json(err);
     });
-};
+}
 
-exports.delete_customer = function(req, res) {
+export function delete_customer(req, res) {
   if (!req.query.email) {
     return res.status(400).send("Missing URL parameter: email");
   }
@@ -67,4 +67,4 @@ exports.delete_customer = function(req, res) {
     .catch(err => {
       res.status(500).json(err);
     });
-};
+}

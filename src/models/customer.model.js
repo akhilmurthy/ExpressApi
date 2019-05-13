@@ -1,5 +1,5 @@
-let mongoose = require("mongoose");
-let credentials = require("../secrets");
+import mongoose from "mongoose";
+import credentials from "../secrets";
 
 var username = credentials.username;
 var password = credentials.password;
@@ -17,4 +17,4 @@ let CustomerSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("Customer", CustomerSchema);
+export default mongoose.model("Customer", CustomerSchema);

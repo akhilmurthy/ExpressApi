@@ -1,14 +1,20 @@
-let express = require("express");
+import express from "express";
+
 let router = express.Router();
 
-var customerController = require("../controllers/customer.controller");
+import {
+  post_customer,
+  get_customer,
+  put_customer,
+  delete_customer
+} from "../controllers/customer.controller";
 
-router.post("/customer", customerController.post_customer);
+router.post("/customer", post_customer);
 
-router.get("/customer", customerController.get_customer);
+router.get("/customer", get_customer);
 
-router.put("/customer", customerController.put_customer);
+router.put("/customer", put_customer);
 
-router.delete("/customer", customerController.delete_customer);
+router.delete("/customer", delete_customer);
 
 module.exports = router;
